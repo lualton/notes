@@ -1,7 +1,8 @@
-Great writer. Simple and engaging style. 
 
 
-Notes about Everybody Lies by Seth Stephens-Davidowitz
+*Notes about Everybody Lies by Seth Stephens-Davidowitz*
+
+Great writer. Simple and engaging style. Questionable science.
 
 
 ***Everything seems to be 'surprising and counterintuitive'***

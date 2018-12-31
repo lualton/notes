@@ -9,10 +9,8 @@ This is a book about how to use history as a tool for decision-making, geared to
 
 Frequently, whenever a decision comes up, people ask "What should we do?" This often leads to rash, unanalyzed options. Try to assess the situation first.
 
-* Journalist Questions
-Who, what, when, where, why? Figure these out and it will allow you to more accurately determine a course of action.
-* Known, Unclear, Assumptions
-Figure out what you know. Figure out what is unclear in the situation. And figure out what you are currently assuming about the situation.
+* **Journalist Questions**: Who, what, when, where, why? Figure these out and it will allow you to more accurately determine a course of action.
+* **Known, Unclear, Assumptions**: Figure out what you know. Figure out what is unclear in the situation. And figure out what you are currently assuming about the situation.
 
 
 **Using a framework to consider history's relevance to a particular problem.**

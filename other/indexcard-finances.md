@@ -18,7 +18,7 @@ https://ssa.uchicago.edu/ssascholars/h-pollack
 **Notes and criticisms from other people about the advice**
 1. Saving 20% of your money
 
-A lot of people can't save 20%, especially with some many living paycheck to paycheck. A key idea is to start saving whatever you can. 1% is better than 0%. 1 dollar is better than 0. 
+A lot of people can't save 20%, especially with many living paycheck to paycheck. A key idea is to start saving whatever you can. 1% is better than 0%. 1 dollar is better than 0. 
 
 2. Promoting social insurance
 

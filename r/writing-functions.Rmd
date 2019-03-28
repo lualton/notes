@@ -1,0 +1,90 @@
+---
+title: "writing-functions-in-r"
+author: "Alton Lu"
+date: "March 27, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Breaking down a function
+
+In R Programming:
+1. Everything that exists is an object. Dataframe, vector, variables - all objects.
+2. Everything that happens is a function call
+
+When you use max(x), max() is a function call. By calling max(), something happens to x, which is an object. min(x) is a function call of min() that finds the minimum value in x.
+
+
+```{r data}
+x1 <- c(1, 2, 3, 4, 5, 20)
+x2 <- c(3, -20, 4, 5, 6, 10)
+```
+
+## Find the min and the max of x1 and x2
+
+```{r}
+min(x1)
+max(x1)
+min(x2)
+max(x2)
+```
+
+## Write a function min_max() that can produce the following output:
+  - "The Minimum of the data is x"
+  - "The Maximum of the data is x"
+  
+
+```{r}
+min_max <- function(data, find_max){
+  if (find_max == 1){
+    a = paste("The maximum of the data is", max(data))
+    
+    print(a)
+  } else if (find_max == 0){
+    a = paste("The minimum of the data is", min(data))
+    
+    print(a)
+  }
+}
+
+
+min_max(x1, find_max=1)
+
+```
+
+## Write a function called custom_max() that finds the max of a vector without using the max() function. Your custom_max fucntion should return:
+  - 20 for x1
+  - 10 for x2
+
+```{r}
+custom_max <- function(values){
+    a = values[1]
+  for(i in values){
+    if(i > a){
+      a = i
+    }
+  }
+  
+  return(a)
+}
+
+custom_max(x2)
+```
+
+## We now have new data with NA's. Modify your custom_max function to find the max even if there are NA's. 
+
+```{r}
+x1 <- c(1, 2, 3, 4, NA, 5, 20, NA)
+x2 <- c(3, -20, NA, 4, 5, 6, 10, NA)
+```
+
+
+
+
+
+
+
+

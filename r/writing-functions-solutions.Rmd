@@ -1,5 +1,5 @@
 ---
-title: "writing-functions-in-r"
+title: "writing-functions-solutions"
 author: "Alton Lu"
 date: "March 27, 2019"
 output: html_document
@@ -62,12 +62,20 @@ Output:
   
 
 ```{r}
-min_max <- function(){
-  # Modify Code here
-  
+min_max <- function(data, find_max){
+  if (find_max == 1){
+    a = paste("The maximum of the data is", max(data))
+    
+    print(a)
+  } 
+  else if (find_max == 0){
+    a = paste("The minimum of the data is", min(data))
+    
+    print(a)
+  }
 }
 
-min_max()
+min_max(x1, find_max=1)
 
 ```
 
@@ -88,14 +96,14 @@ Outputs:
 ```{r}
 custom_max <- function(values){
   a = values[1]
-  for(i in values) {
-    if (i > a){
-      a <- i
+  for(i in values){
+    if(i > a){
+      a = i
     }
   }
+  
   return(a)
 }
-
 
 custom_max(x2)
 ```
@@ -125,19 +133,14 @@ mtcars <- mtcars # Don't change this line
 set.seed(1) # Don't change this line
 
 test_split <- function(data, p){
-  obs <- nrow(data)
+  obs = nrow(data)
   
-  test_set <- data[sample(obs, round(p*obs)),]
-  
+  test_set <- data[sample(obs, p*obs), ]
   return(test_set)
-
 }
 
-
-# Returns the first row
-a <- test_split(mtcars, .25)
-# nrow(test_split(mtcars, .25))
-
+test_split(mtcars, .25)[1,]
+test_split(mtcars, .25)
 
 ```
 
@@ -154,7 +157,7 @@ Inputs:
 Output:
 
   1. A vector of indicies that can be used to split a dataframe into train and test
-    Example: output = c(5,1,21,56,12,13)
+    Example: c(5,1,21,56,12,13)
 
 Notes:
 
@@ -167,15 +170,22 @@ set.seed(1) # Don't change this line
 
 # This function creates a test split of data
 train_test_split <- function(data, p){
-  # Modify Code Here
+  # Assigns the number of rows to obs
+  obs = nrow(data)
   
-  
+  # Take a sample from obs
+  idx <- sample(obs, round(p*obs))
+  return(idx)
 }
 
 # Run train_test split and assign to index_split
-index_split <- train_test_split()
+index_split <- train_test_split(mtcars, .25)
+index_split
 
-# Split mtcars into train_data and test_data
+# Split data into train and test
+train_data <- mtcars[-index_split, ]
+test_data <- mtcars[index_split, ]
+
 
 ```
 
@@ -205,7 +215,22 @@ test_sizes = c(.10, .25, .5) # Don't change this line
 
 
 for(i in test_sizes){
-  # Modify Code
+  # Split the index of each dataset by the size
+  # print("Splitting Data into Train and Test Sets")
+  index_split <- train_test_split(mtcars, i)
+  train_data <- mtcars[-index_split, ]
+  test_data <- mtcars[index_split, ]
+  
+  # Fit and predict
+  # print("Fitting and Predicting")
+  model_fit <- lm(mpg ~ ., data = train_data)
+  prediction <- predict(model_fit, test_data)
+  
+  # 
+  mse <- mean((prediction - test_data$mpg)^2)
+  print(paste("The MSE for test size of", i, " is", mse))
+  
+  
 }
 
 ```

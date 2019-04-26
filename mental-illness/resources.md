@@ -46,3 +46,8 @@ Companion Website: https://www.reddit.com/r/ForeverAlone/
 
 Classification of Helpful Comments on Online Suicide Watch Forums
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5521987/
+
+Fake News Detection on Social Media: A Data Mining Perspective
+https://arxiv.org/abs/1708.01967
+
+This is a great paper on detecting fake news online, but takes a broad overview of the problem that is applicable to many areas.

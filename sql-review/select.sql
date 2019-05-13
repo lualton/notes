@@ -68,3 +68,36 @@ FROM table
 WHERE column1 LIKE 'A%'
 AND column2 NOT LIKE '_A%'
 /* % - any text standin; _ for any before characters */
+
+
+/* IN */
+WHERE column IN (x, y)
+WHERE column NOT IN (x, y)
+
+
+/* Aggregate */
+SELECT SUM(column1)
+SELECT AVG(column1)
+SELECT MIN(column1)
+SELECT MAX(column1)
+
+/* Alias */
+SELECT column AS name
+SELECT column1 - column2 AS name
+
+/* Order by, ordering, sorting */
+SELECT column
+FROM table
+ORDER BY column DESC
+
+/* Grouping */
+SELECT column
+FROM table
+GROUP BY column;
+
+SELECT column
+FROM table
+WHERE
+GROUP BY
+HAVING AGG(column)
+ORDER BY

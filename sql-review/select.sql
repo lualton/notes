@@ -50,3 +50,21 @@ SELECT *
 FROM table
 WHERE (column1 = xxx OR column1 = yyy)
 AND (column2 = 'text' OR column2 = 'more-text');
+
+/* Find a range (between) */
+SELECT *
+FROM table
+WHERE column1 BETWEEN x AND y
+
+/* NULL */
+SELECT *
+FROM table
+WHERE column1 IS NULL
+AND column2 IS NOT NULL
+
+/* LIKE */
+SELECT *
+FROM table
+WHERE column1 LIKE 'A%'
+AND column2 NOT LIKE '_A%'
+/* % - any text standin; _ for any before characters */

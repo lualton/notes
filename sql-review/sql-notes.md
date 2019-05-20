@@ -15,3 +15,12 @@ General big picture of execution order
 - Next are row operations
 - Then column operations
 - Then sorting
+
+
+## Joins
+- Inner Join: Set that matches in both table A and table B
+- Outer Joins
+  - Full Outer: Set that matches all records in table A and table B + Null for non-matching records
+  - Left Join: Table A + Matching records from Table B. Null if no matching records
+  - Right Join: Table B + Matching Records or Null from Table A.
+- Cross Join (Cartesian Product): Joins Everything to Everything. Table A = 10, Table B = 10, Joined Table = 100 

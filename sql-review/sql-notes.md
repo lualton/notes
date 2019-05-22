@@ -40,3 +40,18 @@ Joins typically make a table wider while unions make it taller.
 - UNION ALL - include rows from Set A and Set B with duplicates
 - INTERSECT - only includes rows in common between Set A and Set B
 - EXCEPT - include rows in Set A that are not in Set B
+
+
+## Subqueries
+
+- Can be used in any part of query
+- Return a variety of information (scalars, lists)
+- Can return another table
+
+- Use to compare groups to summarized values
+  - Find how one group performance compared to the average across all groups.
+  - How well did product A sell compared to all products
+  - Which student groups performed above average?
+- Reshape Data
+  - What is the highest monthly average product sold in region A.
+- Combine Data that usually can't be joined

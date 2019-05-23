@@ -27,8 +27,8 @@ General big picture of execution order
 - Cross Join (Cartesian Product): Joins Everything to Everything. Table A = 10, Table B = 10, Joined Table = 100
 
 These joins are similar to filtering or WHERE clause
-- Semi Join:
-- Anti Join: Useful in identifying which records are causing an incorrect number of records to appear in join queries
+- Semi Join: Rows in Table A that EXIST in Table B, but doesn't actually join. This acts as a constraint where we only want rows of Table A that are present in Table B.
+- Anti Join: Useful in identifying which records are causing an incorrect number of records to appear in join queries. Table A - Table B. Returns rows in Table A that are not present in Table B. This is the opposite of a semi-join. 
 
 ## Joins vs Unions
 

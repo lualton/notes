@@ -28,7 +28,7 @@ General big picture of execution order
 
 These joins are similar to filtering or WHERE clause
 - Semi Join: Rows in Table A that EXIST in Table B, but doesn't actually join. This acts as a constraint where we only want rows of Table A that are present in Table B.
-- Anti Join: Useful in identifying which records are causing an incorrect number of records to appear in join queries. Table A - Table B. Returns rows in Table A that are not present in Table B. This is the opposite of a semi-join. 
+- Anti Join: Useful in identifying which records are causing an incorrect number of records to appear in join queries. Table A - Table B. Returns rows in Table A that are not present in Table B. This is the opposite of a semi-join.
 
 ## Joins vs Unions
 
@@ -55,3 +55,71 @@ Joins typically make a table wider while unions make it taller.
 - Reshape Data
   - What is the highest monthly average product sold in region A.
 - Combine Data that usually can't be joined
+
+## Correlated Subqueries
+Normal Subqueries:
+- Run independently of the main query
+- Evaluated once with whole query
+
+Correlated:
+- Dependent on main query
+- Evaluated in loops
+
+You can often use correlated subqueries instead of joins
+
+Correlated subqueries are basically loops in SQL, written in reverse, with condition as WHERE
+
+
+
+
+## Common Table Expression
+
+Special Subquery declared ahead of main query
+
+```
+WITH cte AS (
+        SELECT x
+        FROM y )
+
+SELECT x
+FROM cte
+```
+
+Using `WITH name` will create the common table expressions
+
+Benefits
+- Executes once
+- Improves query performance
+- Improves organization of query
+- Can reference itself
+
+## Technique Differences
+
+Joins
+- Combine 2 tables
+- Simple aggregations
+
+- What is total sales per employee?
+
+
+Correlated Subqueries
+- Match subqueries and joins
+- Allows more complicated expressions that joins can't
+- High processing time
+
+- Useful for matching data from different columns within one or more tables
+- Who does each employee report to?
+
+Multiple/Nested Subqueries
+- Useful for step-by-step transformations of data
+- Break down steps
+
+- What is the average deal size closed by each sales rep in the quarter?
+
+Common Table Expressions
+- Allows organization of subqueries
+- Basically the same as functions
+- Only need to run it once for long queries or for multiple use
+
+- Useful for comparing a lot of tables
+- How did sales, growth, engineering teams perform on KPI's last year? 

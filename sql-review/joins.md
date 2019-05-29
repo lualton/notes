@@ -14,9 +14,11 @@ Assume we're a Bank:
 2. Subquery table B for ID's WHERE product_type = A and Balance <= $2000.
 3. Main query ID from Table A, using WHERE EXISTS to filter with subquery
 
+```
 SELECT ID
 FROM tableA
 WHERE EXISTS (SELECT ID
               FROM tableB
               WHERE product_type = 'A'
               AND balance <= 2000);
+```

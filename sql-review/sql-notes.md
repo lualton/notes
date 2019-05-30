@@ -122,4 +122,10 @@ Common Table Expressions
 - Only need to run it once for long queries or for multiple use
 
 - Useful for comparing a lot of tables
-- How did sales, growth, engineering teams perform on KPI's last year? 
+- How did sales, growth, engineering teams perform on KPI's last year?
+
+## DATES
+
+If a date column:
+
+`month FROM date`

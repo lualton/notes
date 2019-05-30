@@ -8,7 +8,6 @@ FROM information_schema.columns
 WHERE table_name='table'
 
 
-
 /* Select entire table */
 SELECT *
 FROM table;

@@ -23,6 +23,8 @@ sum(is.na(data$col))
 sum(!is.na(data$col))
 ```
 
+
+
 ## Group By Code
 
 ```
@@ -44,12 +46,4 @@ df %>%
   group_by(col2) %>%
   summarise_each(funs(mean, sd, n_distinct), col1)
 
-```
-
-
-###### Move columns
-
-```
-df <- df %>%
-  select(column_to_move, everything())
 ```

@@ -1,4 +1,5 @@
 ## Window Functions
+# https://dev.mysql.com/doc/refman/8.0/en/window-functions-usage.html
 
 Big problem is `GROUP BY` is you have to group ALL non-aggregated columns.
 This means you can't compare an aggregated value to non-aggregated values.
@@ -33,7 +34,7 @@ Keywords for <start> and <finish>
 Specify rows before and after current row
 - PRECEDING
 - FOLLOWING
-Include all since begin or ending
+Include all since begin 	or ending
 - UNBOUNDED PRECEDING
 - UNBOUNDED FOLLOWING
 Stop calculations at current row
@@ -88,4 +89,17 @@ WHERE
 	awayteam_id = 9908
     AND season = '2011/2012';
 
+```
+
+```
+select
+name, weight,
+min(weight) over (order by name ROWS between 1 preceding and 1 following)
+from runners order by name
+```
+
+Running total of cats by breed and name.
+```
+SELECT name, breed, SUM(weight) OVER(PARTITION BY breed ORDER BY breed, name)
+FROM cats
 ```

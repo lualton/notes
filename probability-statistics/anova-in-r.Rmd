@@ -1,0 +1,53 @@
+---
+title: "anova-in-r"
+author: "Alton Lu"
+date: "June 17, 2019"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Anova in R {.tabset}
+
+ANOVA (analysis of variance)
+- An extension of t-tests where there are more than 2 groups. Grouping is doen through a factor variable.
+
+
+
+Key Assumptions:
+- Observations are independent and randomly sampled from the population of each group
+- Data in each group are normally distributed
+- The normal populations have a common variance (Leverne's Test)
+
+
+Two Types of Anova:
+- One Way Anova
+  - Hypothesis:
+    - Null: the means are the same between all groups
+    - Alternative: the means of at least one group are different
+- Two Way Anova
+  - Hypothesis:
+    - Null: the means are the same between all groups, there is no interaction between the two groups
+    
+    - Alternative: the means of at least one group are different, there is an interaction between groups 
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

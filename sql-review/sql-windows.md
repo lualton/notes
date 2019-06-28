@@ -55,6 +55,15 @@ LEFT JOIN country AS c ON m.country_id = c.id;
 Using PARTITION BY, OVER
 
 ```
+RANK() OVER (
+    PARTITION BY <expression>[{,<expression>...}]
+    ORDER BY <expression> [ASC|DESC], [{,<expression>...}]
+)
+```
+
+
+
+```
 SELECT
 	date,
 	season,
